@@ -43,6 +43,8 @@ const Feed = ({search}) => {
     const [editingPostId, setEditingPostId] = useState(null)
 
     const inputRef = useRef(null)
+    const profilePicPath = localStorage.getItem("profilePic") || "/public/profilePic.svg"
+    const profilePicUrl = `http://localhost:5000${profilePicPath}`
 
     const fetchPosts = async () => {
         try {
@@ -173,6 +175,14 @@ const Feed = ({search}) => {
                 <button className="tab active">Abonnement</button>
             </nav>
             <div className="newPost">
+                <img
+                    className="profilePicNewPost"
+                    src={profilePicUrl}
+                    alt="Photo de profil"
+                    onError={(e) => {
+                        e.currentTarget.src = "http://localhost:5000/public/profilePic.svg"
+                    }}
+                />
                 <input className="inputPost" type="text" value={input} onChange={(e) => setInput(e.target.value)} placeholder="Quoi de neuf ?" ref={inputRef} onKeyDown={(e) => {if (e.key === "Enter") {handleSubmitPost()} else if (e.key === "Escape") {setEditingPostId(null), setInput("")}
                 }}  />
                 {input.length > 0 ? <button className="addPostBtn" onClick={handleSubmitPost} disabled={input.length > 10} >{editingPostId ? "Editer" : "Poster"}</button> : <button className="addPostBtn" onClick={handleSubmitPost} disabled={input.length > 10} style={{backgroundColor: "grey"}} >{editingPostId ? "Editer" : "Poster"}</button> }

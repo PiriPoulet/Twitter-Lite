@@ -32,12 +32,27 @@
 
 .newPost {
     border-bottom: 1px solid;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+}
+
+.profilePicNewPost {
+    width: 40px;
+    height: 40px;
+    border-radius: 9999px;
+    object-fit: cover;
+    flex: 0 0 auto;
 }
 
 .inputPost {
     color: white;
     background-color: black;
     border: none;
+    flex: 1;
+    font-size: 18px;
+    outline: none;
 }
 
 .addPostBtn {

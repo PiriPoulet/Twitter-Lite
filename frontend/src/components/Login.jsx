@@ -26,6 +26,7 @@ const Login = () => {
             localStorage.setItem("token", data.token)
             localStorage.setItem("userId", data.user._id)
             localStorage.setItem("pseudo", data.user.pseudo)
+            localStorage.setItem("profilePic", data.user.profilePic || "/public/profilePic.svg")
             window.location.href = "/"
         } catch(err) {
             setError("Erreur serveur")

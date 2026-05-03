@@ -31,13 +31,15 @@ router.post("/register", upload.single("profilePic"), async (req, res) => {
 
     const hashedPassword = await bcrypt.hash(password, 10)
 
-    const newUser = await User.create({pseudo, email, password: hashedPassword})
+    const profilePic = req.file ? `/public/${req.file.filename}` : undefined
+
+    const newUser = await User.create({pseudo, email, password: hashedPassword, profilePic})
 
     console.log(newUser)
 
     const token = jwt.sign({_id: newUser._id}, process.env.JWT_SECRET, {expiresIn: "1h"})
 
-    res.status(201).json({token, user: {_id: newUser._id, pseudo: newUser.pseudo, email: newUser.email}})
+    res.status(201).json({token, user: {_id: newUser._id, pseudo: newUser.pseudo, email: newUser.email, profilePic: newUser.profilePic}})
 })
 
 router.post("/login", async (req, res) => {
@@ -61,7 +63,7 @@ router.post("/login", async (req, res) => {
 
     const token = jwt.sign({_id: user._id}, process.env.JWT_SECRET, {expiresIn: "1h"})
 
-    res.json({token, user: {_id: user._id, pseudo: user.pseudo, email: user.email}})
+    res.json({token, user: {_id: user._id, pseudo: user.pseudo, email: user.email, profilePic: user.profilePic}})
 })
 
 module.exports = router

@@ -1,3 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <rect width="128" height="128" rx="64" fill="#1d1f23"/>
+  <circle cx="64" cy="52" r="22" fill="#5b6775"/>
+  <path d="M24 116c8-22 24-34 40-34s32 12 40 34" fill="#5b6775"/>
+</svg>
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="340" height="340">
 <path fill="#DDD" d="m169,.5a169,169 0 1,0 2,0zm0,86a76,76 0 1 1-2,0zM57,287q27-35 67-35h92q40,0 67,35a164,164 0 0,1-226,0"/>
