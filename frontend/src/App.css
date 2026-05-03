@@ -1,0 +1,55 @@
+html, body {
+    margin: 0;
+    display: grid;
+    background-color: black;
+    color: white;
+}
+
+.app {
+    min-height: 100vh;
+    display: flex;
+}
+
+.leftSidebar {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #ccc;
+}
+
+.leftSidebar button {
+    padding: 10px;
+    background-color: black;
+    border: none;
+    cursor: pointer;
+}
+
+.leftSidebar button:hover {
+    border-radius: 50px;
+    background-color: gray;
+} 
+.LoginLeftIcon {
+    border-radius: 50px;
+    background-color: rgb(255, 255, 255);
+}
+
+.rightSidebar {
+    width: 500px;
+}
+
+.searchInput {
+    width: 400px;
+    height: 60px;
+    border: 1px solid white;
+    background-color: black;
+    border-radius: 50px;
+    margin: 50px;
+    padding-left: 20px;
+    color: white;
+    font-size: 20px;
+}
+
+main {
+    flex: 1;
+    border-right: 1px solid white;
+}

@@ -1,0 +1,56 @@
+.tabs {
+    display: flex;
+    border-bottom: 1px solid white;
+    position: sticky;
+    top: 0;
+    opacity: 0.8;
+}
+
+.tab {
+    flex: 1;
+    color: white;
+    background-color: black;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: larger;
+    position: relative;
+    height: 100px;
+}
+.active::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 6px;
+    background-color: #1d9bf0;
+    border-radius: 2px;
+}
+
+.newPost {
+    border-bottom: 1px solid;
+}
+
+.inputPost {
+    color: white;
+    background-color: black;
+    border: none;
+}
+
+.addPostBtn {
+    border: none;
+    border-radius: 50px;
+    
+}
+
+.liste {
+    padding: 0;
+}
+
+.post {
+    list-style: none;
+    border-bottom: solid 1px white;
+}
